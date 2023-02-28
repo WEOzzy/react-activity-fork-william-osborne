@@ -59,11 +59,24 @@ export function PokemonList() {
         newPokemon.name = event.target.value;
     }
 
+    function deleteBox(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const filteredData = listOfPokemon.filter((pokemon) => pokemon.name !== newPokemon.name);
+        console.log(filteredData);
+        setListPoke(filteredData);
+    }
+
     return (
     <div>
         <h3>Add Pokemon via PokeAPI</h3>
         <form className="grid" onSubmit={onSubmitP}>
             <label>Name</label>
+            <input type="text" onChange={setNameP}></input>
+            <br/>
+            <input type="submit"></input>
+        </form>
+        <form className="grid" onSubmit={deleteBox}>
+            <label>Name to remove</label>
             <input type="text" onChange={setNameP}></input>
             <br/>
             <input type="submit"></input>

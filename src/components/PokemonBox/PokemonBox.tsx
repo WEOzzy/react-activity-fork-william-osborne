@@ -1,3 +1,4 @@
+import { PokemonList } from "../PokemonList/PokemonList";
 import { Pokemon } from "../models/Pokemon";
 
 export default function PokemonBox(props: Pokemon) {
